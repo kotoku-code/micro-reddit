@@ -8,6 +8,18 @@ class LinksController < ApplicationController
     @links = Link.all
   end
 
+  def upvote
+    @link = Link.find(params[:id])
+    @link.upvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def downvote
+    @link = Link.find(params[:id])
+    @link.downvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
   # GET /links/1
   # GET /links/1.json
   def show
