@@ -3,7 +3,7 @@ ruby on rails project
 
 Building a micro reddit with ruby on rails
 
-demo image = (https://user-images.githubusercontent.com/53125243/81801591-f45f6b00-9514-11ea-95a2-ef0d562cefc7.PNG))
+demo image = (![Capture](https://user-images.githubusercontent.com/53125243/84266003-1227ec00-ab24-11ea-84f4-c9d9d11a7543.PNG))
 
 
 ## Table of Contents
