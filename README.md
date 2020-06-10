@@ -49,6 +49,11 @@ We built an application similar to Reddit (called Micro-Reddit) where a user can
 - Twitter: [@kennedykotoku](https://twitter.com/kennedykotoku)
 - Linkedin: [Kotoku Kennedy](www.linkedin.com/in/kotoku-kennedy-5b04a9128)
 
+ **Grace Tamara Ekunola**
+- Github: [@Temmarie](https://github.com/Temmarie)
+- Twitter: [@TemmarieW](https://twitter.com/TemmarieW)
+- Linkedin: [Grace Tife Ekunola](https://www.linkedin.com/in/ekunola-grace-b02b1b194/)
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
