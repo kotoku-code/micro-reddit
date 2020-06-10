@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  
+  before_action :set_link, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
+
   # GET /links
   # GET /links.json
   def index
@@ -22,8 +22,7 @@ class LinksController < ApplicationController
 
   # GET /links/1
   # GET /links/1.json
-  def show
-  end
+  def show; end
 
   # GET /links/new
   def new
@@ -31,8 +30,7 @@ class LinksController < ApplicationController
   end
 
   # GET /links/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /links
   # POST /links.json
@@ -75,13 +73,14 @@ class LinksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_link
-      @link = Link.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def link_params
-      params.require(:link).permit(:title, :url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_link
+    @link = Link.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def link_params
+    params.require(:link).permit(:title, :url)
+  end
 end

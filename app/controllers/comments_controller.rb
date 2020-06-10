@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: %i[show edit update destroy]
 
   # GET /comments
   # GET /comments.json
@@ -9,8 +9,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1
   # GET /comments/1.json
-  def show
-  end
+  def show; end
 
   # GET /comments/new
   def new
@@ -18,8 +17,7 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /comments
   # POST /comments.json
@@ -27,12 +25,12 @@ class CommentsController < ApplicationController
     @link = Link.find(params[:link_id])
     @comment = @link.comments.new(comment_params)
     @comment.user = current_user
-respond_to do |format|
+    respond_to do |format|
       if @comment.save
         format.html { redirect_to @link, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { redner json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -63,13 +61,14 @@ respond_to do |format|
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def comment_params
-      params.require(:comment).permit(:link_id, :body, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def comment_params
+    params.require(:comment).permit(:link_id, :body, :user_id)
+  end
 end
